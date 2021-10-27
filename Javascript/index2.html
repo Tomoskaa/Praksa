@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container-fluid pt-5 pb-5 bg-dark inner-header">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="mt-0 mb-3 text-white">Company</h1>
+            <div class="breadcrumbs">
+                <p class="mb-0 text-white">
+                    <a class="text-white" href="index.html">List All Users</a> /
+                    <a class="text-success" href="index2.html">User Profile</a> /
+                    <a class="text-white" href="index3.html">Create User</a>
+            </div>
+            <button class="mr-5 text-dark btn btn-light" type='button' id='submitBtn' style="margin-left: -1150px; margin-top: -95px;">Back</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <h1 class="my-4 text-center">User Profile</h1>
+
+    <div class="main main-raised">
+        <div class="profile-content">
+            <div class="container">
+                <div class="row" id="user_picture">
+                    <h6 class="pc"></h6>
+                </div>
+                <div class="description text-center">
+                    <h2 class="text-success">About</h2>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h2 class="text-success">Profile</h2>
+                        <h6 id="users_profile" class="form-control" style="position: relative; text-align: center"></h6>
+                    </div>
+                    <div class="col-6">
+                        <h2 class="text-success">Address</h2>
+                        <h6 id="users_address" class="form-control" style="position: relative; text-align: center"></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="mt-5 bg-dark p-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <h2 class="footer-heading"><a href="#" class="text-white" style="text-decoration: none">Company</a></h2>
+                <p class="mt-3 text-white">
+                    <a class="text-white" href="index.html">List All Users</a> /
+                    <a class="text-success" href="index2.html" style="text-decoration: none">User Profile</a> /
+                    <a class="text-white" href="index3.html" style="text-decoration: none">Create User</a>
+                </p>
+                <p class="mt-5">
+                    <a href="#" class="twitter bg-white text-success p-2 mx-2 rounded-circle"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="facebook bg-white text-success p-2 mx-2 rounded-circle"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="instagram bg-white text-success p-2 mx-2 rounded-circle"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="google-plus bg-white text-success p-2 mx-2 rounded-circle"><i class="fab fa-skype"></i></a>
+                    <a href="#" class="linkedin bg-white text-success p-2 mx-2 rounded-circle"><i class="fab fa-linkedin"></i></a>
+                </p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <hr class="text-white">
+            <div class="col-md-12 text-center text-white">
+                <p>
+                    Copyright &copy; All rights reserved 2021
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+
+<script>
+  $(document).ready(function () {
+
+    fetch("https://dummyapi.io/data/v1/user", {
+      method: 'GET',
+      headers: {
+        "Content-Type":"application/json; charset=UTF-8",
+        "app-id": "6175a2c936e4345ad6ceb954"
+      }
+    })
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (data) {
+        var user_data = ''
+        var user_pictures = ''
+        var user_address = ''
+
+        $.each(data.data, function (key, value) {
+          user_pictures += '<h6></h6>' + '<img style="width: 20%; display: block; margin-left: auto; margin-right: auto;" src="' + value.picture + '"/>'
+        })
+        $('#user_picture').append(user_pictures)
+
+        $.each(data.data, function (key, value) {
+          user_data += '<h6 class=\'mt-2\'>Id</h6>' + value.id + '</br>'
+          user_data += '<h6 class=\'mt-2\'>Title</h6>' + value.title + '</br>'
+          user_data += '<h6 class=\'mt-2\'>Fist Name</h6>' + '<p>' + value.firstName + '</p>'
+          user_data += '<h6 class=\'mt-2\'>Last Name</h6>' + '<p>' + value.lastName + '</p>'
+          user_data += '<h6 class=\'mt-2\'>Gender</h6>' + '<p>' + value.gender + '</p>'
+          user_data += '<h6 class=\'mt-2\'>Email</h6>' + '<p>' + value.email + '</p>'
+          user_data += '<h6 class=\'mt-2\'>Date Of Birth</h6>' + '<p>' + value.dateOfBirth + '</p>'
+          user_data += '<h6 class=\'mt-2\'>Phone</h6>' + '<p>' + value.phone + '</p>'
+        })
+        $('#users_profile').append(user_data)
+
+        $.each(data.data, function (key, value) {
+          user_address += '<h6 class=\'mt-2\'>Street</h6>' + value.location.street + '</br>'
+          user_address += '<h6 class=\'mt-2\'>City</h6>' + value.location.city + '</br>'
+          user_address += '<h6 class=\'mt-2\'>Country</h6>' + '<p>' + value.location.country + '</p>'
+          user_address += '<h6 class=\'mt-2\'>Timezone</h6>' + '<p>' + value.location.timezone + '</p>'
+          user_address += '<h6 class=\'mt-2\'>Register Date</h6>' + '<p>' + value.registerDate + '</p>'
+        })
+        $('#users_address').append(user_address)
+      })
+
+    function redirectToFirstPage() {
+      window.location.href="index.html";
+    }
+    document.getElementById("submitBtn").addEventListener("click", redirectToFirstPage);
+  })
+</script>

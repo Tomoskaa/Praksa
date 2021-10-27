@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page 3</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+</head>
+<body>
+
+<div class="container-fluid pt-5 pb-5 bg-dark inner-header">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="mt-0 mb-3 text-white">Company</h1>
+            <div class="breadcrumbs">
+                <p class="mb-0 text-white">
+                    <a class="text-white" href="index.html">List All Users</a> /
+                    <a class="text-white" href="index2.html">User Profile</a> /
+                    <a class="text-success" href="index3.html">Create User</a>
+            </div>
+            <button class="mr-5 text-dark btn btn-light" type='button' id='submitBtn' style="margin-left: -1150px; margin-top: -95px;">Back</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <form>
+        <h3 class="text-center mt-4 mb-3 text-success">Personal Information Details</h3>
+        <hr>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Title</label>
+                <select type="title" placeholder="Title" class="form-control">
+                    <option value="ms">MS</option>
+                    <option value="mr">MR</option>
+                    <option value="miss">MISS</option>
+                    <option value="mrs">MRS</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label>First Name</label>
+                <input type="text" name="fistName" placeholder="First Name" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Last Name</label>
+                <input type="text" name="lastName" placeholder="Last Name" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Date Of Birth</label>
+                <input type="date" placeholder="Date Of Birth" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Gender</label>
+                <select type="gender" placeholder="Gender" class="form-control">
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Phone</label>
+                <input type="text" placeholder="Phone" class="form-control">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-sm-12">
+                <label>Email</label>
+                <input type="email" placeholder="Your email" class="form-control">
+            </div>
+        </div>
+
+
+        <h3 class="text-center mt-4 mb-3 text-success">Address Details</h3>
+        <hr>
+        <div class="form-group">
+            <label>Street</label>
+            <input type="text" class="form-control" placeholder="Street">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>City</label>
+                <input type="text" class="form-control" placeholder="City">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>Albania</option>
+                    <option>America</option>
+                    <option>Austria</option>
+                    <option>Macedonia</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label>Zip</label>
+                <input type="text" class="form-control" placeholder="Post Code">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Country</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Country">
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Create User</button>
+        </div>
+
+    </form>
+
+</div>
+
+<footer class="mt-5 bg-dark p-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <h2 class="footer-heading"><a href="#" class="text-white" style="text-decoration: none">Company</a></h2>
+                <p class="mt-3 text-white">
+                    <a class="text-white" href="index.html">List All Users</a> /
+                    <a class="text-white" href="index2.html" style="text-decoration: none">User Profile</a> /
+                    <a class="text-success" href="index3.html" style="text-decoration: none">Create User</a>
+                </p>
+                <p class="mt-5">
+                    <a href="#" class="twitter bg-white text-success p-2 mx-2 rounded-circle"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#" class="facebook bg-white text-success p-2 mx-2 rounded-circle"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="instagram bg-white text-success p-2 mx-2 rounded-circle"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" class="google-plus bg-white text-success p-2 mx-2 rounded-circle"><i
+                            class="fab fa-skype"></i></a>
+                    <a href="#" class="linkedin bg-white text-success p-2 mx-2 rounded-circle"><i
+                            class="fab fa-linkedin"></i></a>
+                </p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <hr class="text-white">
+            <div class="col-md-12 text-center text-white">
+                <p>
+                    Copyright &copy; All rights reserved 2021
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+
+<script>
+  function redirectToFirstPage() {
+    window.location.href="index.html";
+  }
+  document.getElementById("submitBtn").addEventListener("click", redirectToFirstPage);
+</script>
+
